@@ -37,7 +37,10 @@ def main():
     )
     args = parser.parse_args()
     reader = TarReader(args.archive_name)
-    reader.peek()
+    try:
+        reader.peek()
+    except NotValidArchive:
+        print "{} is not a valid archive".format(args.archive_name)
 
 
 if __name__ == "__main__":
