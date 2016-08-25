@@ -38,8 +38,8 @@ class TarReaderTestCase(unittest.TestCase):
 
                         mock_is_tarfile.assert_called_once_with(TAR_FILE_NAME)
                         mock_open.assert_called_once_with(TAR_FILE_NAME, "r")
-                        mock_getmembers.assert_called_once()
-                        mock_close.assert_called_once()
+                        mock_getmembers.assert_called_once_with()
+                        mock_close.assert_called_once_with()
 
     def test_peek_with_false_tar_file(self):
         with mock.patch.object(tarfile, 'is_tarfile') as mock_is_tarfile:
