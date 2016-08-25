@@ -16,7 +16,6 @@ class TarReader(object):
     def peek(self):
         try:
             if tarfile.is_tarfile(self.arch):
-                #with tarfile.open(self.arch, "r") as files:
                 files = tarfile.open(self.arch, "r")
                 for f in files.getmembers():
                     print "{} {}".format(time.ctime(f.mtime), f.name)
